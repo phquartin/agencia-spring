@@ -30,7 +30,6 @@ public class DestinyModel {
 
     private String description;
 
-    // DestinyModel
     @ManyToMany(mappedBy = "destinies")
     private List<VacationPackageModel> vacationPackages;
 
