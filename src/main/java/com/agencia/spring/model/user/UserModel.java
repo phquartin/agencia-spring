@@ -27,8 +27,7 @@ public class UserModel {
     @Column(nullable = false)
     private Role role = Role.CLIENT; // valor padrão
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "id_client", nullable = false)
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private ClientModel client;
 
 }
