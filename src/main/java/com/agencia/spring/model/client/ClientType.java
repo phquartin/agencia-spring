@@ -1,6 +1,6 @@
 package com.agencia.spring.model.client;
 
-public enum TypeClient {
+public enum ClientType {
     NACIONAL,
     ESTRANGEIRO
 }

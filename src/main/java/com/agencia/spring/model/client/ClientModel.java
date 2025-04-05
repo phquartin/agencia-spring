@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ModelClient {
+public class ClientModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,6 +35,6 @@ public class ModelClient {
 
     //TODO: Preciso definir como vou desenvolver a logica de documentos (CPF ou Passaporte)
     @Column(nullable = false, unique = true)
-    private TypeClient typeClient;
+    private ClientType clientType;
 
 }
