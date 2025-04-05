@@ -1,5 +1,6 @@
 package com.agencia.spring.model.user;
 
+import com.agencia.spring.model.client.ClientModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,6 +29,6 @@ public class UserModel {
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "id_client", nullable = false)
-    private UserModel user;
+    private ClientModel client;
 
 }
