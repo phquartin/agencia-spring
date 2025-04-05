@@ -12,7 +12,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity
-@Table(name = "tb_client_package")
+@Table(name = "tb_client_packages")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -30,7 +30,7 @@ public class PurchaseModel {
     // Relacionamento com Pacote
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_package", nullable = false)
-    private VacationPackageModel vacationPackage;
+    private VacationPackageModel vacationPackages;
 
     @Column(nullable = false)
     private LocalDate startDate;
@@ -38,7 +38,7 @@ public class PurchaseModel {
     // Relacionamento com os serviços contratados neste pacote
     @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
-            name = "tb_client_package_service",
+            name = "tb_client_packages_services",
             joinColumns = @JoinColumn(name = "id_client_package"),
             inverseJoinColumns = @JoinColumn(name = "id_service")
     )

@@ -79,7 +79,7 @@ public class CountryModel {
     @Column(nullable = false)
     private Continent continent;
 
-    @OneToMany(mappedBy = "country", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "country", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<DestinyModel> destinies;
 
 }

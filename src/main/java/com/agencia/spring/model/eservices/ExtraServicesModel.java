@@ -1,9 +1,12 @@
 package com.agencia.spring.model.eservices;
 
+import com.agencia.spring.model.purchase.PurchaseModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @Table(name = "tb_extra_services")
@@ -23,4 +26,7 @@ public class ExtraServicesModel {
     private double price;
 
     private String description;
+
+    @ManyToMany(mappedBy = "services")
+    private List<PurchaseModel> client_purchases;
 }
