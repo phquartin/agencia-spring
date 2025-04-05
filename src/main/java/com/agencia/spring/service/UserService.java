@@ -14,13 +14,18 @@ public class UserService {
 
     private final UserRepository userRepository;
 
+    // READ
     //TODO: Apagar o findAll ou deixar ele de algum jeito apenas para ADMINS (verificar se isso pode impactar a segurança).
     public List<UserModel> findAll() {return userRepository.findAll(); }
 
     public Optional<UserModel> findByUsername(String username) {return userRepository.findByUsername(username); }
 
+    public Optional<UserModel> findById(Long id) {return userRepository.findById(id); }
+
+    // CRATE
     public UserModel save(UserModel userModel) {return userRepository.save(userModel); }
 
+    // DELETE
     public void delete(UserModel userModel) {userRepository.delete(userModel); }
 
 }
