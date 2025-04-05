@@ -22,6 +22,7 @@ public class UserModel {
     @Column(nullable = false)
     private String password;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role = Role.CLIENT; // valor padrão
 
