@@ -1,4 +1,4 @@
-package com.agencia.spring.model;
+package com.agencia.spring.model.user;
 
 public enum Role {
     ADMIN,

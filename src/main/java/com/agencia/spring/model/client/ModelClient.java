@@ -1,5 +1,6 @@
-package com.agencia.spring.model;
+package com.agencia.spring.model.client;
 
+import com.agencia.spring.model.user.UserModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

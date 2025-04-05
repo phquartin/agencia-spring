@@ -1,4 +1,4 @@
-package com.agencia.spring.model;
+package com.agencia.spring.model.user;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

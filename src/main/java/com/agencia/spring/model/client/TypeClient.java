@@ -1,4 +1,4 @@
-package com.agencia.spring.model;
+package com.agencia.spring.model.client;
 
 public enum TypeClient {
     NACIONAL,
