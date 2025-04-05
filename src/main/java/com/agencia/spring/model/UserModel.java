@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "users")
+@Table(name = "tb_users")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -23,6 +23,6 @@ public class UserModel {
     private String password;
 
     @Column(nullable = false)
-    private String role = "USER"; // valor padrão
+    private Role role = Role.CLIENT; // valor padrão
 
 }
