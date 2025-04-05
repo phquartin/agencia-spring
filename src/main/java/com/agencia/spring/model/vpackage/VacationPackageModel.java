@@ -1,5 +1,6 @@
 package com.agencia.spring.model.vpackage;
 
+import com.agencia.spring.model.destiny.DestinyModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,5 +28,12 @@ public class VacationPackageModel {
 
     @Column(nullable = false)
     private int days;
+
+    @ManyToMany
+    @JoinTable(name = "tb_vacation_package_destinies",
+    joinColumns = @JoinColumn(name = "id_vacation_package"),
+    inverseJoinColumns = @JoinColumn(name = "id_destiny")
+    )
+    private java.util.List<DestinyModel> destinies;
 
 }
