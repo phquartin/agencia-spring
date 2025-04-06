@@ -2,7 +2,6 @@ package com.agencia.spring.controller;
 
 import com.agencia.spring.model.user.UserModel;
 import com.agencia.spring.service.UserService;
-import groovy.util.ResourceException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,8 +32,8 @@ public class UserController {
     }
 
     @PostMapping
-    public UserModel saveUser(@RequestBody UserModel userModel) {
-        return userService.save(userModel);
+    public UserModel saveUser(@RequestBody String username, @RequestBody String password) {
+        return userService.save(username, password);
     }
 
     @DeleteMapping("/id/{id}")
