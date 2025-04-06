@@ -1,4 +1,4 @@
-package com.agencia.spring.model.countries;
+package com.agencia.spring.model.country;
 
 public enum Continent {
     ASIA,

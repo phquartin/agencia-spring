@@ -1,4 +1,4 @@
-package com.agencia.spring.model.countries;
+package com.agencia.spring.model.country;
 
 import com.agencia.spring.model.destiny.DestinyModel;
 import jakarta.persistence.*;
@@ -52,14 +52,14 @@ public class CountryModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     @NotBlank
     private String name;
 
-    @Column(nullable = false, length = 3)
+    @Column(nullable = false, unique = true, length = 3)
     @NotBlank
     @Pattern(regexp = "^[A-Z]{3}$", message = "O código ISO deve conter exatamente 3 letras maiúsculas.")
-    private String iso_code;
+    private String isoCode;
 
     @Column(nullable = false)
     @NotBlank
@@ -73,7 +73,7 @@ public class CountryModel {
     @NotBlank
     @Size(min=2, max=4)
     @Pattern(regexp = "^\\+\\d{1,3}$", message = "O código numérico deve começar com '+' seguido de 1 a 3 dígitos.")
-    private String number_code;
+    private String numberCode;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)

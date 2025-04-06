@@ -1,7 +1,7 @@
 package com.agencia.spring.model.purchase;
 
 import com.agencia.spring.model.client.ClientModel;
-import com.agencia.spring.model.eservices.ExtraServicesModel;
+import com.agencia.spring.model.eservice.ExtraServicesModel;
 import com.agencia.spring.model.vpackage.VacationPackageModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

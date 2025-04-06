@@ -1,4 +1,4 @@
-package com.agencia.spring.model.eservices;
+package com.agencia.spring.model.eservice;
 
 import com.agencia.spring.model.purchase.PurchaseModel;
 import jakarta.persistence.*;

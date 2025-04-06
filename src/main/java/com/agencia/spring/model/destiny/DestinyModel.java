@@ -1,6 +1,6 @@
 package com.agencia.spring.model.destiny;
 
-import com.agencia.spring.model.countries.CountryModel;
+import com.agencia.spring.model.country.CountryModel;
 import com.agencia.spring.model.vpackage.VacationPackageModel;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
