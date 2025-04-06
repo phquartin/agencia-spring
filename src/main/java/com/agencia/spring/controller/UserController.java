@@ -31,11 +31,6 @@ public class UserController {
         return ResponseEntity.ok(userService.findById(id));
     }
 
-    @PostMapping
-    public UserModel saveUser(@RequestBody String username, @RequestBody String password) {
-        return userService.save(username, password);
-    }
-
     @DeleteMapping("/id/{id}")
     public ResponseEntity<Void> deleteUserById(@PathVariable Long id) {
         userService.deleteById(id);

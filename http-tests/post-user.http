@@ -1,8 +1,7 @@
-POST http://localhost:8080/users
+POST http://localhost:8080/auth/register
 Content-Type: application/json
 
 {
-  "username": "newUser",
-  "password": "securePassword",
-  "role": "CLIENT"
+  "username": "pedrinhof4",
+  "password": "123456"
 }

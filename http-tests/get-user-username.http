@@ -1,2 +1,4 @@
-GET http://localhost:8080/users/username/newUser
+### Authorization by token, part 2. Use token to authorize.
+GET http://localhost:8080/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZWRyaW5ob2Y0IiwiZXhwIjoxNzQzOTkzMjg5fQ.8VBiZWP96URcTjtmnS5lfxiWYnH99IxhIyPGhIuHh7U
 Accept: application/json

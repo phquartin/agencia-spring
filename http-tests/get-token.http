@@ -1,0 +1,8 @@
+### Send POST request with json body
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{
+  "username": "pedrinhof4",
+  "password": "$2a$10$hm0olXTPCkDy5f38qawIqeJprZiPvcsY1lRLyCjmRPHNii7O3v3eW"
+}
