@@ -2,11 +2,12 @@ package com.agencia.spring.service;
 
 import com.agencia.spring.model.user.UserModel;
 import com.agencia.spring.repository.UserRepository;
+import groovy.util.ResourceException;
 import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -18,14 +19,28 @@ public class UserService {
     //TODO: Apagar o findAll ou deixar ele de algum jeito apenas para ADMINS (verificar se isso pode impactar a segurança).
     public List<UserModel> findAll() {return userRepository.findAll(); }
 
-    public Optional<UserModel> findByUsername(String username) {return userRepository.findByUsername(username); }
+    @SneakyThrows
+    public UserModel findByUsername(String username) {
+        return userRepository.findByUsername(username).orElseThrow(() -> new ResourceException("User not found with username: " + username));
+    }
 
-    public Optional<UserModel> findById(Long id) {return userRepository.findById(id); }
+    @SneakyThrows
+    public UserModel findById(Long id) {
+        return userRepository.findById(id).orElseThrow(() -> new ResourceException("User not found with id: " + id));
+    }
 
     // CRATE
     public UserModel save(UserModel userModel) {return userRepository.save(userModel); }
 
     // DELETE
-    public void delete(UserModel userModel) {userRepository.delete(userModel); }
+    @SneakyThrows
+    public void deleteById(Long id) {
+
+        if (!userRepository.existsById(id)) {
+            throw new ResourceException("User not found with id: " + id);
+        }
+
+        userRepository.deleteById(id);
+    }
 
 }
