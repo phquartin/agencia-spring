@@ -1,12 +1,14 @@
 package com.agencia.spring.repository;
 
-import ch.qos.logback.core.net.server.Client;
-import com.agencia.spring.model.user.UserModel;
+import com.agencia.spring.model.client.ClientModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
-public interface ClientRepository extends JpaRepository<Client, Long> {
-    Client findByUserId(Long userId);
-    Client findByUserUsername(String userUsername);
+public interface ClientRepository extends JpaRepository<ClientModel, Long> {
+
+    Optional<ClientModel> findByUserId(Long userId);
+    Optional<ClientModel> findByUserUsername(String userUsername);
 }
